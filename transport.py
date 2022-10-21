@@ -19,3 +19,7 @@ class Transport:
 
         self.destination.add(name=self.__request.product, quantity=self.__request.amount)
         print(f'Курьер доставил {self.__request.amount} {self.__request.product} в {self.__request.destination}')
+
+    def cancel(self):
+        self.departure.add(name=self.__request.product, quantity=self.__request.amount)
+        print("Доставка отменена, товар вернулся обратно")

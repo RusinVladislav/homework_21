@@ -58,6 +58,7 @@ def main():
             item_transport.move()
         except BaseError as error:
             print(error.message)
+            item_transport.cancel()
 
 
 if __name__ == '__main__':

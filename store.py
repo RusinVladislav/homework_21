@@ -1,5 +1,5 @@
 from abstract_storage import AbstractStorage
-from exceptions import NotSpaceError, NoProductError, LowProductError
+from exceptions import NotSpaceStorageError, NoProductError, LowProductError
 
 
 class Store(AbstractStorage):
@@ -10,7 +10,7 @@ class Store(AbstractStorage):
 
     def add(self, name: str, quantity: int) -> None:
         if self.get_free_space() < quantity:
-            raise NotSpaceError
+            raise NotSpaceStorageError
 
         if name in self.__items:
             self.__items[name] += quantity

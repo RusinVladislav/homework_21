@@ -2,8 +2,12 @@ class BaseError(Exception):
     message = 'Что-то сломалось'
 
 
-class NotSpaceError(BaseError):
+class NotSpaceStorageError(BaseError):
     message = "На складе не хватает места"
+
+
+class NotSpaceShopError(BaseError):
+    message = "В магазине не хватает места"
 
 
 class NoProductError(BaseError):
